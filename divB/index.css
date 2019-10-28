@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+body header {
+  margin: 0;
+  padding: 0;
+}
+
+body header .navigation {
+  margin: 0;
+  padding: 0;
+}
+
+body header .navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: goldenrod;
+}
+
+body header .navigation ul li {
+  float: left;
+}
+
+body header .navigation ul li a {
+  display: block;
+  color: cornsilk;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+body header .navigation ul li .active {
+  background-color: darkgoldenrod;
+}
+/*# sourceMappingURL=index.css.map */
