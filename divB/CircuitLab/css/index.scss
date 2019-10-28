@@ -1,0 +1,46 @@
+body {
+	margin: 0;
+	header {
+		margin: 0;
+		padding: 0;
+		.navigation {
+			margin: 0;
+			padding: 0;
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: goldenrod;
+				li {
+					float: left;
+					a {
+						display: block;
+						color: cornsilk;
+						text-align: center;
+						padding: 14px 16px;
+						text-decoration: none;
+						&:hover {
+							background-color: darkgoldenrod;
+						}
+					}
+					.active {
+						background-color: darkolivegreen;
+					}
+				}
+			}
+		}
+	}
+	.mainBody {
+		text-align: center;
+		margin: 5px;
+		h1 {
+			font-weight: 500;
+		}
+		button {
+			background-color: goldenrod;
+			border: 2px solid coral;
+			padding: 5px 10px;
+		}
+	}
+}
