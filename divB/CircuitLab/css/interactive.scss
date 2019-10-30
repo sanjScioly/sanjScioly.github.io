@@ -32,24 +32,20 @@ body {
 		}
 	}
 	.mainBody {
-		margin: 5px;
 		h1,h2 {
+			margin-bottom: 0;
 			font-weight: 500;
-		}
-		button {
-			background-color: goldenrod;
-			border: 2px solid coral;
-			padding: 5px 10px;
-		}
-		.listOfThings{
-			list-style-type: square;
-			font-size: 18px;
 			a{
 				text-decoration: none;
 				&:visited, &:link{
 				color: fuchsia;
 				}			
 			}
+		}
+		button {
+			background-color: goldenrod;
+			border: 2px solid coral;
+			padding: 5px 10px;
 		}
 	}
 }
