@@ -41,7 +41,6 @@ body header .navigation ul li .active {
 }
 
 body .mainBody {
-  text-align: center;
   margin: 5px;
 }
 
@@ -53,5 +52,13 @@ body .mainBody button {
   background-color: goldenrod;
   border: 2px solid coral;
   padding: 5px 10px;
+}
+
+body .mainBody a {
+  text-decoration: none;
+}
+
+body .mainBody a:visited, body .mainBody a:link {
+  color: fuchsia;
 }
 /*# sourceMappingURL=index.css.map */

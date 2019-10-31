@@ -32,7 +32,6 @@ body {
 		}
 	}
 	.mainBody {
-		text-align: center;
 		margin: 5px;
 		h1 {
 			font-weight: 500;
@@ -41,6 +40,12 @@ body {
 			background-color: goldenrod;
 			border: 2px solid coral;
 			padding: 5px 10px;
+		}
+		a{
+			text-decoration: none;
+			&:visited, &:link{
+			color: fuchsia;
+			}			
 		}
 	}
 }
