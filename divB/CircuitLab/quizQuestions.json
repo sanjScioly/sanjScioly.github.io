@@ -1,9 +1,27 @@
-"questions": {
-    "history": [],
-    "chargesAndFields": [],
-    "DC": [],
-    "AC": [],
-    "vir": [],
-    "magnetsAndFields": [],
-    "kirchhoff": []
+{
+    "questions": {
+        "history": {
+            "title": "History",
+            "type": "MC",
+            "questions_and_answers": [
+                {
+                    "question": "",
+                    "correct": "",
+                    "wrong": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ]
+                }
+            ]
+        },
+        "chargesAndFields": {},
+        "DC": {},
+        "AC": {},
+        "vir": {},
+        "magnetsAndFields": {},
+        "kirchhoff": {}
+    }
 }
