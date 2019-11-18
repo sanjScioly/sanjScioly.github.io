@@ -44,7 +44,7 @@ body .mainBody {
   margin: 5px;
 }
 
-body .mainBody h1 {
+body .mainBody h1, body .mainBody h3 {
   font-weight: 500;
 }
 /*# sourceMappingURL=quizes.css.map */
