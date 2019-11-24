@@ -3,8 +3,12 @@ body {
 }
 
 body header {
+  overflow: hidden;
+  position: sticky;
+  position: -webkit-sticky;
   margin: 0;
   padding: 0;
+  top: 0;
 }
 
 body header .navigation {

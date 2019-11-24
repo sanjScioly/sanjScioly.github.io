@@ -1,8 +1,12 @@
 body {
 	margin: 0;
 	header {
+		overflow: hidden;
+		position: sticky;
+		position: -webkit-sticky;
 		margin: 0;
 		padding: 0;
+		top: 0;
 		.navigation {
 			margin: 0;
 			padding: 0;

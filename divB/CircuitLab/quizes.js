@@ -26,8 +26,8 @@ class question {
     variables = []
     answers = []
     questionFormatted = ''
-    constructor(text) {
-        var broken = text.split('l:')
+    constructor(questionJSON) {
+        var broken = questionJSON.question.split('l:')
         broken.forEach(varDef => {
             if (varDef.includes('=&')) {
                 var subParts = varDef.split('=&');
@@ -43,6 +43,18 @@ class question {
                 this.questionFormatted += varDef;
             }
         });
+        questionJSON.answers.forEach(option => {
+            if(option.includes("eval(")){
+                equation = option.substring(5).slice(0,-1)
+                if(equation.includes('/')){
+                    this.variables.forEach(variableElement => {
+                        
+                    });
+                    this.answers.push(option.split("/")[0]/option.split("/")[1])
+                }
+            }
+        });
+
     }
 }
 
@@ -53,7 +65,7 @@ if (topic = 'DC') {
         questionDiv = document.createElement('div');
         question_title = document.createElement('p');
         if (DCQuestions.type = 'equation') {
-            questionNestObject = new question(questionObj.question)
+            questionNestObject = new question(questionObj)
             question_title.innerHTML = questionNestObject.questionFormatted;
             questionDiv.appendChild(question_title);
         }
