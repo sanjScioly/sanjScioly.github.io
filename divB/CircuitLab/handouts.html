@@ -12,6 +12,7 @@
         gtag('config', 'UA-146792494-2');
     </script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sanjit's Scioly Page</title>
     <link rel="shortcut icon" type="image/png" href="/icon.png">
     <link rel="stylesheet" href="./css/handouts.css">
@@ -20,12 +21,23 @@
 
 <body>
     <header>
-        <div class="navigation">
+        <div class="navigationDesktop">
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/divB/index.html">Division B</a></li>
                 <li><a href="/divC/index.html">Division C</a></li>
                 <li><a class="active" href="/divB/CircuitLab/index.html">Circuit Lab B</a></li>
+            </ul>
+        </div>
+        <div class="navigationMobile">
+            <div class="sameLine">
+                <a class="active" href="/index.html">Home</a>
+                <img src="/hamburger.png" alt="Menu" height="30px" onclick="ham();">
+            </div>
+            <ul id="ulNav" class="hide">
+                <li><a href="/divB/index.html">Division B</a></li>
+                <li><a href="/divC/index.html">Division C</a></li>
+                <li><a href="/divB/CircuitLab/index.html">Circuit Lab B</a></li>
             </ul>
         </div>
     </header>
