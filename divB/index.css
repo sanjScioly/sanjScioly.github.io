@@ -44,7 +44,8 @@ body .mainBody {
   margin: 5px;
 }
 
-body .mainBody h1 {
+body .mainBody h1,
+body .mainBody h2 {
   font-weight: 500;
 }
 
@@ -52,5 +53,19 @@ body .mainBody button {
   background-color: goldenrod;
   border: 2px solid coral;
   padding: 5px 10px;
+  font-size: 17px;
+}
+
+body .mainBody button a {
+  text-decoration: none;
+  color: maroon;
+}
+
+body .mainBody button a:hover {
+  color: blueviolet;
+}
+
+body .mainBody button .active {
+  color: maroon;
 }
 /*# sourceMappingURL=index.css.map */
