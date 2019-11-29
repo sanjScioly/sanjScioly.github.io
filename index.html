@@ -22,7 +22,7 @@
 
 <body>
     <header>
-        <div class="navigation">
+        <div class="navigationDesktop">
             <ul>
                 <li><a class="active" href="/index.html">Home</a></li>
                 <li><a href="/divB/index.html">Division B</a></li>
@@ -30,6 +30,18 @@
                 <li><a href="https://www.github.com/sanjScioly/sanjScioly.github.io">Source Code</a></li>
                 <li><a href="https://www.github.com/sanjScioly/sanjScioly.github.io/contributing.md">Contributing</a>
                 </li>
+            </ul>
+        </div>
+        <div class="navigationMobile">
+            <div class="sameLine">
+                <a class="active" href="/index.html">Home</a>
+                <img src="/hamburger.png" alt="Menu" height="30px" onclick="ham();">
+            </div>
+            <ul id="ulNav" class="hide">
+                <li><a href="/divB/index.html">Division B</a></li>
+                <li><a href="/divC/index.html">Division C</a></li>
+                <li><a href="https://www.github.com/sanjScioly/sanjScioly.github.io">Source Code</a></li>
+                <li><a href="github.com/sanjScioly/sanjScioly.github.io/contributing.md">Contributing</a></li>
             </ul>
         </div>
     </header>
