@@ -4,40 +4,11 @@ body {
 		overflow: hidden;
 		position: sticky;
 		position: -webkit-sticky;
-		margin: 0;
-		padding: 0;
 		top: 0;
-		.navigation {
-			margin: 0;
-			padding: 0;
-			ul {
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-				overflow: hidden;
-				background-color: goldenrod;
-				li {
-					float: left;
-					a {
-						display: block;
-						color: cornsilk;
-						text-align: center;
-						padding: 14px 16px;
-						text-decoration: none;
-						&:hover {
-							background-color: darkgoldenrod;
-						}
-					}
-					.active {
-						background-color: darkolivegreen;
-					}
-				}
-			}
-		}
 	}
 	.mainBody {
-		margin: 5px;
-		h1,h2 {
+		h1,
+		h2 {
 			font-weight: 500;
 		}
 		button {
@@ -45,14 +16,131 @@ body {
 			border: 2px solid coral;
 			padding: 5px 10px;
 		}
-		.listOfThings{
+		.listOfThings {
 			list-style-type: square;
 			font-size: 18px;
-			a{
+			a {
 				text-decoration: none;
-				&:visited, &:link{
-				color: fuchsia;
-				}			
+				&:visited,
+				&:link {
+					color: fuchsia;
+				}
+			}
+		}
+	}
+}
+
+@viewport {
+	width: device-width;
+	zoom: 1;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+@media only screen and (max-width: 600px) {
+	/*Mobile*/
+	body {
+		margin: 0;
+		header {
+			margin: 0;
+			padding: 0;
+			.navigationDesktop {
+				display: none;
+			}
+			.navigationMobile {
+				margin: 0;
+				padding: 0;
+				background-color: goldenrod;
+				ul {
+					list-style-type: none;
+					&.hide {
+						display: none;
+					}
+				}
+				#ulNav {
+					margin: 0;
+					padding-inline-start: 0 !important;
+				}
+				a {
+					display: block;
+					color: cornsilk;
+					text-align: center;
+					padding: 14px 16px;
+					text-decoration: none;
+					&:hover {
+						background-color: darkgoldenrod;
+					}
+				}
+				align-content: center;
+				.sameLine {
+					a {
+						display: inline-block;
+						margin-left: 38%;
+					}
+					img {
+						float: right;
+						margin-right: 2%;
+						margin-top: 1.75%;
+					}
+				}
+			}
+		}
+		.mainBody {
+			margin: 5px;
+			h1 {
+				font-weight: 500;
+			}
+			p {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	/*Desktop*/
+	body {
+		margin: 0;
+		header {
+			margin: 0;
+			padding: 0;
+			.navigationMobile {
+				display: none;
+			}
+			.navigationDesktop {
+				margin: 0;
+				padding: 0;
+				ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					overflow: hidden;
+					background-color: goldenrod;
+					li {
+						float: left;
+						a {
+							display: block;
+							color: cornsilk;
+							text-align: center;
+							padding: 14px 16px;
+							text-decoration: none;
+							&:hover {
+								background-color: darkgoldenrod;
+							}
+						}
+						.active {
+							background-color: darkolivegreen;
+						}
+					}
+				}
+			}
+		}
+		.mainBody {
+			margin: 5px;
+			h1 {
+				font-weight: 500;
 			}
 		}
 	}

@@ -78,7 +78,41 @@
     padding: 0;
   }
   body header .navigationMobile {
+    margin: 0;
+    padding: 0;
+    background-color: goldenrod;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  body header .navigationMobile ul {
+    list-style-type: none;
+  }
+  body header .navigationMobile ul.hide {
     display: none;
+  }
+  body header .navigationMobile #ulNav {
+    margin: 0;
+    -webkit-padding-start: 0 !important;
+            padding-inline-start: 0 !important;
+  }
+  body header .navigationMobile a {
+    display: block;
+    color: cornsilk;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  body header .navigationMobile a:hover {
+    background-color: darkgoldenrod;
+  }
+  body header .navigationMobile .sameLine a {
+    display: inline-block;
+    margin-left: 38%;
+  }
+  body header .navigationMobile .sameLine img {
+    float: right;
+    margin-right: 2%;
+    margin-top: 1.75%;
   }
   body header .navigationDesktop {
     margin: 0;

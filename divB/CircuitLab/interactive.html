@@ -11,6 +11,7 @@
 
         gtag('config', 'UA-146792494-2');
     </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Sanjit's Scioly Page</title>
     <link rel="shortcut icon" type="image/png" href="/icon.png">
@@ -20,12 +21,23 @@
 
 <body>
     <header>
-        <div class="navigation">
+        <div class="navigationDesktop">
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/divB/index.html">Division B</a></li>
                 <li><a href="/divC/index.html">Division C</a></li>
                 <li><a class="active" href="/divB/CircuitLab/index.html">Circuit Lab B</a></li>
+            </ul>
+        </div>
+        <div class="navigationMobile">
+            <div class="sameLine">
+                <a class="active" href="/index.html">Home</a>
+                <img src="/hamburger.png" alt="Menu" height="30px" onclick="ham();">
+            </div>
+            <ul id="ulNav" class="hide">
+                <li><a href="/divB/index.html">Division B</a></li>
+                <li><a href="/divC/index.html">Division C</a></li>
+                <li><a href="/divB/CircuitLab/index.html">Circuit Lab B</a></li>
             </ul>
         </div>
     </header>
@@ -35,31 +47,30 @@
             <h2>Static Electricity</h2>
             <iframe
                 src="https://phet.colorado.edu/sims/html/balloons-and-static-electricity/latest/balloons-and-static-electricity_en.html"
-                width="800" height="600" scrolling="no" allowfullscreen></iframe><br>
+                height="600" scrolling="no" allowfullscreen></iframe><br>
 
-            <iframe src="https://phet.colorado.edu/sims/html/john-travoltage/latest/john-travoltage_en.html" width="800"
+            <iframe src="https://phet.colorado.edu/sims/html/john-travoltage/latest/john-travoltage_en.html"
                 height="600" scrolling="no" allowfullscreen></iframe><br><br>
-
 
             <h2>Charges and Fields</h2>
             <iframe src="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_en.html"
-                width="800" height="600" scrolling="no" allowfullscreen></iframe>
-            <h2>Coulomb's Law</h2>
-            <iframe src="https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_en.html" width="800"
                 height="600" scrolling="no" allowfullscreen></iframe>
+            <h2>Coulomb's Law</h2>
+            <iframe src="https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_en.html" height="600"
+                scrolling="no" allowfullscreen></iframe>
             <h2>DC Circuits</h2>
             <iframe
                 src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html"
-                width="800" height="600" scrolling="no" allowfullscreen></iframe>
+                height="600" scrolling="no" allowfullscreen></iframe>
             <h2>Resistance in a wire</h2>
             <iframe src="https://phet.colorado.edu/sims/html/resistance-in-a-wire/latest/resistance-in-a-wire_en.html"
-                width="800" height="600" scrolling="no" allowfullscreen></iframe>
+                height="600" scrolling="no" allowfullscreen></iframe>
             <h2>Capacitors</h2>
             <iframe src="https://phet.colorado.edu/sims/html/capacitor-lab-basics/latest/capacitor-lab-basics_en.html"
-                width="800" height="600" scrolling="no" allowfullscreen></iframe>
-            <h2>Faraday's Law</h2>
-            <iframe src="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_en.html" width="800"
                 height="600" scrolling="no" allowfullscreen></iframe>
+            <h2>Faraday's Law</h2>
+            <iframe src="https://phet.colorado.edu/sims/html/faradays-law/latest/faradays-law_en.html" height="600"
+                scrolling="no" allowfullscreen></iframe>
         </center>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

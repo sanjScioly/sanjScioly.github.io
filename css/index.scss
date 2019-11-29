@@ -27,6 +27,10 @@
 						display: none;
 					}
 				}
+				#ulNav {
+					margin: 0;
+					padding-inline-start: 0 !important;
+				}
 				a {
 					display: block;
 					color: cornsilk;
@@ -41,12 +45,12 @@
 				.sameLine {
 					a {
 						display: inline-block;
-						margin-left: 45%;
+						margin-left: 38%;
 					}
 					img {
 						float: right;
 						margin-right: 2%;
-						margin-top: 1%;
+						margin-top: 1.75%;
 					}
 				}
 			}

@@ -57,6 +57,11 @@ body .mainBody button .active {
   body header .navigationMobile ul.hide {
     display: none;
   }
+  body header .navigationMobile #ulNav {
+    margin: 0;
+    -webkit-padding-start: 0 !important;
+            padding-inline-start: 0 !important;
+  }
   body header .navigationMobile a {
     display: block;
     color: cornsilk;
@@ -69,12 +74,12 @@ body .mainBody button .active {
   }
   body header .navigationMobile .sameLine a {
     display: inline-block;
-    margin-left: 45%;
+    margin-left: 38%;
   }
   body header .navigationMobile .sameLine img {
     float: right;
     margin-right: 2%;
-    margin-top: 1%;
+    margin-top: 1.75%;
   }
   body .mainBody {
     margin: 5px;

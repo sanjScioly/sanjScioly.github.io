@@ -1,51 +1,156 @@
-body {
-  margin: 0;
+@-o-viewport {
+  width: device-width;
+  zoom: 1;
 }
 
-body header {
-  margin: 0;
-  padding: 0;
+@viewport {
+  width: device-width;
+  zoom: 1;
 }
 
-body header .navigation {
-  margin: 0;
-  padding: 0;
+@-ms-viewport {
+  width: device-width;
 }
 
-body header .navigation ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: goldenrod;
+@media only screen and (max-width: 600px) {
+  /*Mobile*/
+  body {
+    margin: 0;
+  }
+  body header {
+    margin: 0;
+    padding: 0;
+  }
+  body header .navigationDesktop {
+    display: none;
+  }
+  body header .navigationMobile {
+    margin: 0;
+    padding: 0;
+    background-color: goldenrod;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  body header .navigationMobile ul {
+    list-style-type: none;
+  }
+  body header .navigationMobile ul.hide {
+    display: none;
+  }
+  body header .navigationMobile #ulNav {
+    margin: 0;
+    -webkit-padding-start: 0 !important;
+            padding-inline-start: 0 !important;
+  }
+  body header .navigationMobile a {
+    display: block;
+    color: cornsilk;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  body header .navigationMobile a:hover {
+    background-color: darkgoldenrod;
+  }
+  body header .navigationMobile .sameLine a {
+    display: inline-block;
+    margin-left: 38%;
+  }
+  body header .navigationMobile .sameLine img {
+    float: right;
+    margin-right: 2%;
+    margin-top: 1.75%;
+  }
+  body .mainBody {
+    margin: 5px;
+  }
+  body .mainBody h1 {
+    font-weight: 500;
+  }
+  body .mainBody p {
+    font-size: 20px;
+  }
 }
 
-body header .navigation ul li {
-  float: left;
-}
-
-body header .navigation ul li a {
-  display: block;
-  color: cornsilk;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-body header .navigation ul li a:hover {
-  background-color: darkgoldenrod;
-}
-
-body header .navigation ul li .active {
-  background-color: darkolivegreen;
-}
-
-body .mainBody {
-  margin: 5px;
-}
-
-body .mainBody h1, body .mainBody h2 {
-  font-weight: 500;
+@media only screen and (min-width: 600px) {
+  /*Desktop*/
+  body {
+    margin: 0;
+  }
+  body header {
+    margin: 0;
+    padding: 0;
+  }
+  body header .navigationMobile {
+    margin: 0;
+    padding: 0;
+    background-color: goldenrod;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  body header .navigationMobile ul {
+    list-style-type: none;
+  }
+  body header .navigationMobile ul.hide {
+    display: none;
+  }
+  body header .navigationMobile #ulNav {
+    margin: 0;
+    -webkit-padding-start: 0 !important;
+            padding-inline-start: 0 !important;
+  }
+  body header .navigationMobile a {
+    display: block;
+    color: cornsilk;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  body header .navigationMobile a:hover {
+    background-color: darkgoldenrod;
+  }
+  body header .navigationMobile .sameLine a {
+    display: inline-block;
+    margin-left: 38%;
+  }
+  body header .navigationMobile .sameLine img {
+    float: right;
+    margin-right: 2%;
+    margin-top: 1.75%;
+  }
+  body header .navigationDesktop {
+    margin: 0;
+    padding: 0;
+  }
+  body header .navigationDesktop ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: goldenrod;
+  }
+  body header .navigationDesktop ul li {
+    float: left;
+  }
+  body header .navigationDesktop ul li a {
+    display: block;
+    color: cornsilk;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  body header .navigationDesktop ul li a:hover {
+    background-color: darkgoldenrod;
+  }
+  body header .navigationDesktop ul li .active {
+    background-color: darkolivegreen;
+  }
+  body .mainBody {
+    margin: 5px;
+  }
+  body .mainBody h1 {
+    font-weight: 500;
+  }
 }
 
 body .mainBody button {
