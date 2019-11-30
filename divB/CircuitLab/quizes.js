@@ -74,14 +74,14 @@ function quizOn(section) {
 
 function newQuestion() {
     document.getElementById('questionDiv').innerHTML = '';
-    DCQuestions = questions.questions[topic].questions_and_answers;
-    document.getElementById('topic').innerHTML = 'Topic: ' + questions.questions.DC.title;
-    questionObj = DCQuestions[Math.floor(Math.random() * DCQuestions.length)]
+    topicQuestions = questions.questions[topic].questions_and_answers;
+    document.getElementById('topic').innerHTML = 'Topic: ' + questions.questions[topic].title;
+    questionObj = topicQuestions[Math.floor(Math.random() * topicQuestions.length)]
     questionDiv = document.getElementById('questionDiv');
     question_title = document.createElement('p');
     question_title.style.fontSize = "20px";
     question_title.style.margin = "1% 0 0 1%";
-    if (questionObj.type = 'equation') {
+    if (questionObj.type == 'equation') {
         questionNestObject = new question(questionObj);
         question_title.innerHTML = questionNestObject.questionFormatted;
         questionDiv.appendChild(question_title);
@@ -107,7 +107,28 @@ function newQuestion() {
         questionDiv.appendChild(optionAnsDiv);
 
     } else {
-
+        question_title.innerHTML = questionObj.question;
+        questionDiv.appendChild(question_title);
+        if (questionObj.diagram != "none") {
+            var diagram = document.createElement("img");
+            diagram.alt = "diagram";
+            diagram.src = questionObj.diagram;
+            diagram.style.width = "250px";
+            questionDiv.appendChild(diagram);
+        }
+        var optionAnsDiv = document.createElement("div");
+        optionAnsDiv.id = "optionAnsDiv";
+        shuffle(questionObj.answers).forEach(option => {
+            var ansOptions = document.createElement("input");
+            ansOptions.type = "radio";
+            ansOptions.name = "option";
+            var optionLabel = document.createElement('label');
+            optionLabel.innerHTML = round_to_precision(parseFloat(option), 4);
+            optionAnsDiv.appendChild(ansOptions);
+            optionAnsDiv.appendChild(optionLabel);
+            optionAnsDiv.appendChild(document.createElement("br"));
+        });
+        questionDiv.appendChild(optionAnsDiv);
     }
 }
 

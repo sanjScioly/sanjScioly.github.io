@@ -50,6 +50,20 @@ var questions = {
                         "eval(V+R)",
                         "eval(V-R)"
                     ]
+                },
+                {
+                    "question": "Here is a diagram of a circuit. Given the resistance of l:R=&Range(1,1000)l: and the Voltage of the battery, l:V=&Range(2,200)l:. Find the current passing through the circuit.",
+                    "diagram": "./quizDiagrams/ohmsLaw1.png",
+                    "type": "question",
+                    "level": "easy",
+                    "answers": [
+                        "eval(V/R)",
+                        "eval(R-V)",
+                        "eval(R/V)",
+                        "eval(V*R)",
+                        "eval(V+R)",
+                        "eval(V-R)"
+                    ]
                 }
             ]
         },
