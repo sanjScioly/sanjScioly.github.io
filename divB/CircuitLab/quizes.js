@@ -1,8 +1,9 @@
 var topic;
 var score = 0;
+var wasTheLastOptionChosenCorrect;
 
-function shuffle(array) {
-    var copy = [], n = array.length, i;
+function shuffle(a) {
+    var copy = [], n = a.length, i;
 
     // While there remain elements to shuffle…
     while (n) {
@@ -11,9 +12,17 @@ function shuffle(array) {
         i = Math.floor(Math.random() * n--);
 
         // And move it to the new array.
-        copy.push(array.splice(i, 1)[0]);
+        copy.push(a.splice(i, 1)[0]);
     }
+    return copy;
+}
 
+function clone(obj) {
+    if (null == obj || "object" != typeof obj) return obj;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+    }
     return copy;
 }
 
@@ -68,15 +77,21 @@ class question {
 function quizOn(section) {
     document.getElementById("quizPopup").classList.remove("hide");
     topic = section;
-    newQuestion();
+    newQuestion('new');
 }
 
 
-function newQuestion() {
+function newQuestion(newOld) {
+    if (newOld != 'new') {
+        if (lastChosen == correctAnswer) {
+
+        }
+    }
     document.getElementById('questionDiv').innerHTML = '';
-    topicQuestions = questions.questions[topic].questions_and_answers;
+    var topicQuestions = questions.questions[topic].questions_and_answers;
     document.getElementById('topic').innerHTML = 'Topic: ' + questions.questions[topic].title;
-    questionObj = topicQuestions[Math.floor(Math.random() * topicQuestions.length)]
+    var questionObj = topicQuestions[Math.floor(Math.random() * topicQuestions.length)];
+    var okBoomer = questionObj;
     questionDiv = document.getElementById('questionDiv');
     question_title = document.createElement('p');
     question_title.style.fontSize = "20px";
@@ -92,12 +107,14 @@ function newQuestion() {
             diagram.style.width = "250px";
             questionDiv.appendChild(diagram);
         }
-        var optionAnsDiv = document.createElement("div");
+        var optionAnsDiv = document.createElement("form");
         optionAnsDiv.id = "optionAnsDiv";
+        correctAnswer = toString(round_to_precision(parseFloat(questionNestObject[0]), 4));
         shuffle(questionNestObject.answers).forEach(option => {
             var ansOptions = document.createElement("input");
             ansOptions.type = "radio";
             ansOptions.name = "option";
+            ansOptions.value = round_to_precision(parseFloat(option), 4);
             var optionLabel = document.createElement('label');
             optionLabel.innerHTML = round_to_precision(parseFloat(option), 4);
             optionAnsDiv.appendChild(ansOptions);
@@ -116,21 +133,42 @@ function newQuestion() {
             diagram.style.width = "250px";
             questionDiv.appendChild(diagram);
         }
-        var optionAnsDiv = document.createElement("div");
+        var optionAnsDiv = document.createElement("form");
         optionAnsDiv.id = "optionAnsDiv";
-        shuffle(questionObj.answers).forEach(option => {
+        answersToLife = okBoomer.answers;
+        correctAnswer = answersToLife[0];
+        shuffle(answersToLife.slice()).forEach(option => {
             var ansOptions = document.createElement("input");
             ansOptions.type = "radio";
             ansOptions.name = "option";
+            ansOptions.value = option;
             var optionLabel = document.createElement('label');
-            optionLabel.innerHTML = round_to_precision(parseFloat(option), 4);
+            optionLabel.innerHTML = option;
             optionAnsDiv.appendChild(ansOptions);
             optionAnsDiv.appendChild(optionLabel);
             optionAnsDiv.appendChild(document.createElement("br"));
+
         });
-        questionDiv.appendChild(optionAnsDiv);
+    }
+    var rad = document.getElementsByName('option');
+    questionDiv.appendChild(optionAnsDiv);
+    var prev = null;
+    for (var i = 0; i < rad.length; i++) {
+        rad[i].addEventListener('change', function () {
+            (prev) ? console.log(prev.value) : null;
+            if (this !== prev) {
+                prev = this;
+            }
+            console.log(this.value);
+            if (this.value == correctAnswer) {
+                console.log(" yea");
+            } else {
+                console.log(" nooo")
+            }
+        });
     }
 }
+
 
 
 
