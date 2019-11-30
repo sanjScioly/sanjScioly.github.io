@@ -1,3 +1,6 @@
+var topic;
+var score = 0;
+
 function shuffle(array) {
     var copy = [], n = array.length, i;
 
@@ -64,43 +67,49 @@ class question {
 
 function quizOn(section) {
     document.getElementById("quizPopup").classList.remove("hide");
-    if (section == 'dc') {
-        DCQuestions = questions.questions.DC.questions_and_answers;
-        document.getElementById('topic').innerHTML = 'Topic: ' + questions.questions.DC.title;
-        DCQuestions.forEach(questionObj => {
-            questionDiv = document.getElementById('questionDiv');
-            question_title = document.createElement('p');
-            question_title.style.fontSize = "20px";
-            question_title.style.margin = "1% 0 0 1%";
-            if (questionObj.type = 'equation') {
-                questionNestObject = new question(questionObj);
-                question_title.innerHTML = questionNestObject.questionFormatted;
-                questionDiv.appendChild(question_title);
-                if (questionObj.diagram != "none") {
-                    var diagram = document.createElement("img");
-                    diagram.alt = "diagram";
-                    diagram.src = questionObj.diagram;
-                    diagram.style.width = "250px";
-                    questionDiv.appendChild(diagram);
-                }
-                var optionAnsDiv = document.createElement("div");
-                optionAnsDiv.id = "optionAnsDiv";
-                shuffle(questionNestObject.answers).forEach(option => {
-                    var ansOptions = document.createElement("input");
-                    ansOptions.type = "radio";
-                    ansOptions.name = "option";
-                    var optionLabel = document.createElement('label');
-                    optionLabel.innerHTML = round_to_precision(parseFloat(option), 4);
-                    optionAnsDiv.appendChild(ansOptions);
-                    optionAnsDiv.appendChild(optionLabel);
-                    optionAnsDiv.appendChild(document.createElement("br"));
-                });
-                questionDiv.appendChild(optionAnsDiv);
-            }
-        });
-    }
+    topic = section;
+    newQuestion();
 }
 
+
+function newQuestion() {
+    document.getElementById('questionDiv').innerHTML = '';
+    DCQuestions = questions.questions[topic].questions_and_answers;
+    document.getElementById('topic').innerHTML = 'Topic: ' + questions.questions.DC.title;
+    questionObj = DCQuestions[Math.floor(Math.random() * DCQuestions.length)]
+    questionDiv = document.getElementById('questionDiv');
+    question_title = document.createElement('p');
+    question_title.style.fontSize = "20px";
+    question_title.style.margin = "1% 0 0 1%";
+    if (questionObj.type = 'equation') {
+        questionNestObject = new question(questionObj);
+        question_title.innerHTML = questionNestObject.questionFormatted;
+        questionDiv.appendChild(question_title);
+        if (questionObj.diagram != "none") {
+            var diagram = document.createElement("img");
+            diagram.alt = "diagram";
+            diagram.src = questionObj.diagram;
+            diagram.style.width = "250px";
+            questionDiv.appendChild(diagram);
+        }
+        var optionAnsDiv = document.createElement("div");
+        optionAnsDiv.id = "optionAnsDiv";
+        shuffle(questionNestObject.answers).forEach(option => {
+            var ansOptions = document.createElement("input");
+            ansOptions.type = "radio";
+            ansOptions.name = "option";
+            var optionLabel = document.createElement('label');
+            optionLabel.innerHTML = round_to_precision(parseFloat(option), 4);
+            optionAnsDiv.appendChild(ansOptions);
+            optionAnsDiv.appendChild(optionLabel);
+            optionAnsDiv.appendChild(document.createElement("br"));
+        });
+        questionDiv.appendChild(optionAnsDiv);
+
+    } else {
+
+    }
+}
 
 
 

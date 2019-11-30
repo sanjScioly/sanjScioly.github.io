@@ -44,13 +44,13 @@
     <div class="mainBody">
         <h1>Topic:</h1>
         <ul>
-            <li><button onclick="document.getElementById('questionDiv').innerHTML='';quizOn('dc'); ">DC
+            <li><button onclick="document.getElementById('questionDiv').innerHTML=''; quizOn('DC'); ">DC
                     Circuits</button>
             </li>
             <li></li>
             <li></li>
         </ul>
-        <div id="quizPopup" class="">
+        <div id="quizPopup" class="hide">
             <div class="header">
                 <img src="./quizDiagrams/close.png" alt="close"
                     onclick="document.getElementById('quizPopup').classList='hide';">
@@ -61,7 +61,7 @@
             <div id="questionDiv">
 
             </div>
-            <button class="submit" onclick="notSure=false;">Check</button>
+            <button class="submit" onclick="newQuestion();">Check</button>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
