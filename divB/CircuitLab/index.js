@@ -5,3 +5,9 @@ function ham() {
         document.getElementById("ulNav").classList = "hide";
     }
 }
+
+
+
+
+
+

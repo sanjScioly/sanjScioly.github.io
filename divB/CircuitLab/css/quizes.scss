@@ -1,40 +1,190 @@
-body {
-	margin: 0;
-	header {
+@viewport {
+	width: device-width;
+	zoom: 1;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+@media only screen and (max-width: 600px) {
+	/*Mobile*/
+	body {
 		margin: 0;
-		padding: 0;
-		.navigation {
+		header {
 			margin: 0;
 			padding: 0;
-			ul {
-				list-style-type: none;
+			.navigationDesktop {
+				display: none;
+			}
+			.navigationMobile {
 				margin: 0;
 				padding: 0;
-				overflow: hidden;
 				background-color: goldenrod;
-				li {
-					float: left;
-					a {
-						display: block;
-						color: cornsilk;
-						text-align: center;
-						padding: 14px 16px;
-						text-decoration: none;
-						&:hover {
-							background-color: darkgoldenrod;
-						}
+				ul {
+					list-style-type: none;
+					&.hide {
+						display: none;
 					}
-					.active {
-						background-color: darkolivegreen;
+				}
+				#ulNav {
+					margin: 0;
+					padding-inline-start: 0 !important;
+				}
+				a {
+					display: block;
+					color: cornsilk;
+					text-align: center;
+					padding: 14px 16px;
+					text-decoration: none;
+					&:hover {
+						background-color: darkgoldenrod;
+					}
+				}
+				align-content: center;
+				.sameLine {
+					a {
+						display: inline-block;
+						margin-left: 38%;
+					}
+					img {
+						float: right;
+						margin-right: 2%;
+						margin-top: 1.75%;
 					}
 				}
 			}
 		}
+		.mainBody {
+			margin: 5px;
+			h1 {
+				font-weight: 500;
+			}
+			p {
+				font-size: 20px;
+			}
+		}
 	}
+}
+
+@media only screen and (min-width: 600px) {
+	/*Desktop*/
+	body {
+		margin: 0;
+		header {
+			margin: 0;
+			padding: 0;
+			.navigationMobile {
+				display: none;
+			}
+			.navigationDesktop {
+				margin: 0;
+				padding: 0;
+				ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					overflow: hidden;
+					background-color: goldenrod;
+					li {
+						float: left;
+						a {
+							display: block;
+							color: cornsilk;
+							text-align: center;
+							padding: 14px 16px;
+							text-decoration: none;
+							&:hover {
+								background-color: darkgoldenrod;
+							}
+						}
+						.active {
+							background-color: darkolivegreen;
+						}
+					}
+				}
+			}
+		}
+		.mainBody {
+			margin: 5px;
+			h1 {
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+body {
 	.mainBody {
-		margin: 5px;
-		h1,h3 {
-			font-weight: 500;
+		button {
+			background-color: goldenrod;
+			border: 2px solid coral;
+			padding: 5px 10px;
+			margin-top: 10px;
+			font-size: 17px;
+			a {
+				text-decoration: none;
+				color: maroon;
+				&:hover {
+					color: blueviolet;
+				}
+			}
+			.active {
+				color: maroon;
+			}
+		}
+		#quizPopup {
+			overflow-y: auto;
+			border: 5px brown;
+			border-style: solid;
+			width: 80%;
+			height: 86%;
+			position: absolute;
+			top: 7%;
+			left: 10%;
+			background-color: white;
+			&.hide {
+				display: none;
+			}
+			.header {
+				img {
+					width: 2%;
+					margin: 7px 0 0 5px;
+				}
+				h2 {
+					margin-left: 8%;
+					display: inline-block;
+					width: 75%;
+					text-align: center;
+					margin-block-start: 0px;
+					margin-block-end: 5px;
+					font-weight: 500;
+				}
+				h3 {
+					width: 10%;
+					display: inline-block;
+					font-weight: 500;
+				}
+				hr {
+					margin: 0;
+					border: 1px solid red;
+				}
+			}
+			input[type="radio" i] {
+				&:hover {
+					background-color: blue;
+				}
+				&:checked {
+					background-color: #80e091;
+				}
+			}
+			.submit {
+				position: relative;
+				left: 92%;
+				position: absolute;
+				bottom: 2%;
+				padding: 7px 14px;
+			}
 		}
 	}
 }
