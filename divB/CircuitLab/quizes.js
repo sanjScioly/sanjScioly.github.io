@@ -157,9 +157,9 @@ function newQuestion(newOld) {
             }
             console.log(this.value);
             if (this.value == correctAnswer) {
-                console.log("fuck yea");
+                wasTheLastOptionChosenCorrect = true;
             } else {
-                console.log("Motherfucking Idiot")
+                wasTheLastOptionChosenCorrect = false;
             }
         });
     }
