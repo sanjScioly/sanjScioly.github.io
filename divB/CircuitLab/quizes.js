@@ -82,11 +82,7 @@ function quizOn(section) {
 
 
 function newQuestion(newOld) {
-    if (newOld != 'new') {
-        if (lastChosen == correctAnswer) {
 
-        }
-    }
     document.getElementById('questionDiv').innerHTML = '';
     var topicQuestions = questions.questions[topic].questions_and_answers;
     document.getElementById('topic').innerHTML = 'Topic: ' + questions.questions[topic].title;
@@ -109,12 +105,12 @@ function newQuestion(newOld) {
         }
         var optionAnsDiv = document.createElement("form");
         optionAnsDiv.id = "optionAnsDiv";
-        correctAnswer = toString(round_to_precision(parseFloat(questionNestObject[0]), 4));
+        correctAnswer = questionNestObject.answers[0];
         shuffle(questionNestObject.answers).forEach(option => {
             var ansOptions = document.createElement("input");
             ansOptions.type = "radio";
             ansOptions.name = "option";
-            ansOptions.value = round_to_precision(parseFloat(option), 4);
+            ansOptions.value = option
             var optionLabel = document.createElement('label');
             optionLabel.innerHTML = round_to_precision(parseFloat(option), 4);
             optionAnsDiv.appendChild(ansOptions);
@@ -161,9 +157,9 @@ function newQuestion(newOld) {
             }
             console.log(this.value);
             if (this.value == correctAnswer) {
-                console.log(" yea");
+                console.log("fuck yea");
             } else {
-                console.log(" nooo")
+                console.log("Motherfucking Idiot")
             }
         });
     }
