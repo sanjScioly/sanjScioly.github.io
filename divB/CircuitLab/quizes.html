@@ -55,12 +55,14 @@
                 <img src="./quizDiagrams/close.png" alt="close"
                     onclick="document.getElementById('quizPopup').classList='hide';">
                 <h2 id="topic">Topic</h2>
-                <h3>Score:</h3>
+                <h3 id="score">Score:</h3>
                 <hr>
             </div>
             <div id="questionDiv">
             </div>
-            <button class="submit" onclick="newQuestion('old');">Check</button>
+            <div id="submitHolder">
+
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

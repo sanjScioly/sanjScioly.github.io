@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html class="gr__127_0_0_1">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sanjit's Scioly Page</title>
+    <link rel="shortcut icon" type="image/png" href="/icon.png">
+    <link rel="stylesheet" href="./css/quizes.css">
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <header>
+        <div class="navigationDesktop">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/divB/index.html">Division B</a></li>
+                <li><a href="/divC/index.html">Division C</a></li>
+                <li><a class="active" href="/divB/CircuitLab/index.html">Circuit Lab B</a></li>
+            </ul>
+        </div>
+        <div class="navigationMobile">
+            <div class="sameLine">
+                <a class="active" href="/index.html">Home</a>
+                <img src="/hamburger.png" alt="Menu" height="30px">
+            </div>
+            <ul id="ulNav" class="hide">
+                <li><a href="/divB/index.html">Division B</a></li>
+                <li><a href="/divC/index.html">Division C</a></li>
+                <li><a href="/divB/CircuitLab/index.html">Circuit Lab B</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="mainBody">
+        <h1>Topic:</h1>
+        <ul>
+            <li><button>DC
+                    Circuits</button>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="quizPopup" class="">
+            <div class="header">
+                <img src="./quizDiagrams/close.png" alt="close">
+                <h2 id="topic">Topic: DC Circuit Analysis</h2>
+                <h3 id="score">Score: 1/1</h3>
+                <hr>
+            </div>
+            <div id="questionDiv">
+                <p style="font-size: 20px; margin: 1% 0px 0px 1%;">Here is a diagram of a circuit. Given the resistance
+                    of R = 677 and the Voltage of the battery, V = 67. Find the current passing through the circuit.</p>
+                <img alt="diagram" src="./quizDiagrams/ohmsLaw1.png" style="width: 250px;">
+                <form id="optionAnsDiv">
+                    <input type="radio" name="option" value="10.104477611940299">
+                    <label>10.1044</label>
+                    <br>
+                    <input type="radio" name="option" value="610">
+                    <label>610</label>
+                    <br>
+                    <input type="radio" name="option" value="45359">
+                    <label>45359</label>
+                    <br>
+                    <input type="radio" name="option" value="-610">
+                    <label>-610</label>
+                    <br>
+                    <input type="radio" name="option" value="0.09896602658788774">
+                    <label>0.0989</label>
+                    <br>
+                    <input type="radio" name="option" value="744">
+                    <label>744</label>
+                    <br>
+                </form>
+            </div>
+            <div id="submitHolder"><button class="submit">Check</button></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

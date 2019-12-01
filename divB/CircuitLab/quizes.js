@@ -1,9 +1,32 @@
 var topic;
 var score = 0;
-var wasTheLastOptionChosenCorrect;
+var submissions = 0;
 
-function shuffle(a) {
+
+document.addEventListener('keypress', logKey);
+
+function logKey(e) {
+    if (e.code == "Enter") {
+        document.getElementsByClassName("submit")[0].dispatchEvent(new MouseEvent("click", {
+            "view": window,
+            "bubbles": true,
+            "cancelable": false
+        }));
+    }
+}
+
+function arrayCopy(oldArray) {
+    var newArray = [];
+    oldArray.forEach(element => {
+        newArray.push(element);
+    })
+    return newArray;
+}
+
+function shuffle(myArray) {
+    var a = arrayCopy(myArray);
     var copy = [], n = a.length, i;
+
 
     // While there remain elements to shuffle…
     while (n) {
@@ -56,7 +79,6 @@ class question {
                 }
                 this.variables.push(new variableListThingie(subParts[0], subParts[1]));
                 this.questionFormatted += subParts[0] + " = " + subParts[1];
-                console.log(this.variables);
             } else {
                 this.questionFormatted += varDef;
             }
@@ -77,17 +99,19 @@ class question {
 function quizOn(section) {
     document.getElementById("quizPopup").classList.remove("hide");
     topic = section;
-    newQuestion('new');
+    newQuestion();
+    score = 0;
+    submissions = 0;
 }
 
 
-function newQuestion(newOld) {
-
+function newQuestion() {
+    var gotItWrong = false;
+    var correctAnswer;
     document.getElementById('questionDiv').innerHTML = '';
     var topicQuestions = questions.questions[topic].questions_and_answers;
     document.getElementById('topic').innerHTML = 'Topic: ' + questions.questions[topic].title;
     var questionObj = topicQuestions[Math.floor(Math.random() * topicQuestions.length)];
-    var okBoomer = questionObj;
     questionDiv = document.getElementById('questionDiv');
     question_title = document.createElement('p');
     question_title.style.fontSize = "20px";
@@ -131,9 +155,9 @@ function newQuestion(newOld) {
         }
         var optionAnsDiv = document.createElement("form");
         optionAnsDiv.id = "optionAnsDiv";
-        answersToLife = okBoomer.answers;
+        answersToLife = questionObj.answers;
         correctAnswer = answersToLife[0];
-        shuffle(answersToLife.slice()).forEach(option => {
+        shuffle(questionObj.answers).forEach(option => {
             var ansOptions = document.createElement("input");
             ansOptions.type = "radio";
             ansOptions.name = "option";
@@ -143,26 +167,77 @@ function newQuestion(newOld) {
             optionAnsDiv.appendChild(ansOptions);
             optionAnsDiv.appendChild(optionLabel);
             optionAnsDiv.appendChild(document.createElement("br"));
+        });
+        questionDiv.appendChild(optionAnsDiv);
+    }
+    // <button id='submit'>Check</button>
+    submitButton = document.createElement("button");
+    submitButton.innerHTML = "Check";
+    submitButton.classList = "submit";
+    document.getElementById("submitHolder").innerHTML = "";
+    document.getElementById("submitHolder").appendChild(submitButton);
+    submitButton.addEventListener("click", function () {
+        var rad = document.getElementsByName('option');
+        questionDiv.appendChild(optionAnsDiv);
+        if (Array.from(rad).some(element => element.checked)) {
+            var value = Array.from(document.getElementsByName("option")).filter(x => x['checked'])[0].value;
+            if (value == correctAnswer) {
+                if (gotItWrong) { } else {
+                    score++;
+                    submissions++;
+                }
 
-        });
-    }
-    var rad = document.getElementsByName('option');
-    questionDiv.appendChild(optionAnsDiv);
-    var prev = null;
-    for (var i = 0; i < rad.length; i++) {
-        rad[i].addEventListener('change', function () {
-            (prev) ? console.log(prev.value) : null;
-            if (this !== prev) {
-                prev = this;
-            }
-            console.log(this.value);
-            if (this.value == correctAnswer) {
-                wasTheLastOptionChosenCorrect = true;
+                document.getElementById("score").innerHTML = "Score: " + score + "/" + submissions;
+                if (submissions < 10) {
+                    newQuestion();
+                } else {
+                    document.getElementById('questionDiv').innerHTML = '';
+                    var totalScore = document.createElement("h1");
+                    var wordsOfEncouragement;
+                    if (score == 10) {
+                        wordsOfEncouragement = "Perfect!"
+                    } else if (score > 7) {
+                        wordsOfEncouragement = "Almost there!";
+                    } else if (score > 5) {
+                        wordsOfEncouragement = "Try Harder";
+                    } else {
+                        wordsOfEncouragement = "At least study first!";
+                    }
+                    totalScore.innerHTML = "You scored " + (score * 10) + "%. " + wordsOfEncouragement;
+                    totalScore.id = "totalScore";
+                    document.getElementById('questionDiv').appendChild(totalScore);
+                    submitButton = document.createElement("button");
+                    submitButton.innerHTML = "Finish";
+                    submitButton.classList = "submit";
+                    document.getElementById("submitHolder").innerHTML = "";
+                    document.getElementById("submitHolder").appendChild(submitButton);
+                    submitButton.addEventListener("click",
+                        function () { document.getElementById('quizPopup').classList = 'hide'; }
+                    );
+
+                }
+
             } else {
-                wasTheLastOptionChosenCorrect = false;
+                if (gotItWrong) {
+
+                } else {
+                    submissions++;
+                }
+                gotItWrong = true;
+                document.getElementById("score").innerHTML = "Score: " + score + "/" + submissions;
             }
-        });
-    }
+
+        } else {
+
+        }
+
+    });
+
+
+
+
+
+
 }
 
 

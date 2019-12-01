@@ -199,4 +199,8 @@ body .mainBody #quizPopup .submit {
   bottom: 2%;
   padding: 7px 14px;
 }
+
+body .mainBody #quizPopup #totalScore {
+  text-align: center;
+}
 /*# sourceMappingURL=quizes.css.map */
