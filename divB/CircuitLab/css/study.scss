@@ -75,41 +75,7 @@
 			margin: 0;
 			padding: 0;
 			.navigationMobile {
-				margin: 0;
-				padding: 0;
-				background-color: goldenrod;
-				ul {
-					list-style-type: none;
-					&.hide {
-						display: none;
-					}
-				}
-				#ulNav {
-					margin: 0;
-					padding-inline-start: 0 !important;
-				}
-				a {
-					display: block;
-					color: cornsilk;
-					text-align: center;
-					padding: 14px 16px;
-					text-decoration: none;
-					&:hover {
-						background-color: darkgoldenrod;
-					}
-				}
-				align-content: center;
-				.sameLine {
-					a {
-						display: inline-block;
-						margin-left: 38%;
-					}
-					img {
-						float: right;
-						margin-right: 2%;
-						margin-top: 1.75%;
-					}
-				}
+				display: none;
 			}
 			.navigationDesktop {
 				margin: 0;
